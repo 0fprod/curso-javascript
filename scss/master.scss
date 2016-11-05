@@ -1,0 +1,370 @@
+//Variables
+  $amount-to-saturate : 30;
+  //Fonts
+  @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+  @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+  $font-lato : 'Lato';
+  $font-tech : 'Share Tech Mono';
+  //Colors
+  $lightBlue : #4b8ab4;
+  $lightOrange : #b49b4b;
+  $lightGreen : #4bb457;
+  $lightRed : #b44b4b;
+  $darkPurple : #4f034b;
+  $electricGreen : #6fff0f;
+  $cyan: #1addff;
+  $white: #fff;
+  $red: #f00;
+// END OF VARIABLES//
+//Commons
+body{
+  margin: 0;
+  padding: 0;
+  font-family: $font-lato;
+  background-color: $darkPurple;
+}
+
+header{
+  text-align: center;
+  padding: 10px;
+  h1{
+    margin: 0 auto;
+    color: $white;
+    a{
+      text-decoration: underline;
+      color: lighten($lightRed, 5);
+      font-weight: bolder;
+    }
+  }
+}
+
+.wrapper{
+  border-radius: 5px;
+  height: 300px;
+  width: 300px;
+}
+
+.container{
+
+}
+
+.title{
+  width: 100%;
+  text-align: center;
+  margin: 3% 0;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: $white;
+  text-decoration: underline;
+}
+
+//Practicas
+#practicas{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+////////////////////////////////////////////////////
+/////////////      Dado           //////////////////
+////////////////////////////////////////////////////
+#dado{
+  background-color: $lightRed;
+  &:hover{
+    background-color: saturate($lightRed, $amount-to-saturate);
+  }
+  #imagen_dado{
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 15%;
+  }
+  span{
+    display: inline-block;
+    margin: 15px;
+    padding: 6px;
+    cursor: default;
+    background-color: darken($lightRed, 10);
+    color: complement($lightRed);
+    border-left: 2px solid darken($lightRed, 20);
+    border-bottom: 2px solid darken($lightRed, 20);
+    font-weight: bold;
+    font-size: 1.1em;
+    &:active{
+      top: -2px;
+      left: -2px;
+      border:none;
+    }
+  }
+  #icons{
+    list-style-type: none;
+    position: relative;
+    left: -20px;
+    li{
+      display: inline-block;
+      img{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  #num-reps{
+    list-style-type: none;
+    position: relative;
+    left: -20px;
+    li{
+      display: inline-block;
+      margin: 0 2%;
+      position: relative;
+      top: -10px;
+    }
+  }
+}
+
+////////////////////////////////////////////////////
+/////////////      Reproductor    //////////////////
+////////////////////////////////////////////////////
+.showlist{
+  max-height: 130px !important;
+}
+
+#reproductor{
+  background-color: $lightOrange;
+  &:hover{
+    background-color: saturate($lightOrange, $amount-to-saturate);
+  }
+  #player{
+    margin: 5% 10px;
+    background-color: gray;
+    padding: 5px;
+    font-family: $font-tech;
+    line-height: 15px;
+    #screen{
+      width: 80%;
+      margin: 0 auto;
+      background-color: black;
+      color: green;
+    }
+    #progress{
+      background-color: lighten($lightGreen, 10);
+      height: 3px;
+      width: 0px;
+    }
+    #songs-list{
+      max-height: 0px;
+      overflow-y: scroll;
+      transition: 1s;
+      background-color: darken($lightOrange, 20);
+      cursor: default;
+      div:hover{
+        color: yellow;
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////
+/////////////      Piano          //////////////////
+////////////////////////////////////////////////////
+.key{
+  border: 1px solid black;
+  width: 17px; //240=80% parent;
+  height: 95%;
+  background: white;
+}
+
+.bkey{
+  width: 17px;
+  height: 50%;
+  background: black;
+  vertical-align: top;
+  top: 0;
+}
+
+#piano{
+  background-color: $lightGreen;
+  &:hover{
+    background-color: saturate($lightGreen, $amount-to-saturate);
+  }
+  #piano-container{
+    padding: 10px;
+    margin: 80px auto auto auto;
+    width: 80%;
+    height: 90px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #555;
+    div{
+      display: inline-block;
+    }
+  }
+}
+
+////////////////////////////////////////////////////
+/////////////      Minijuego      //////////////////
+////////////////////////////////////////////////////
+
+#minijuego{
+  background-color: $lightBlue;
+  &:hover{
+    background-color: saturate($lightBlue, $amount-to-saturate);
+  }
+  #gamecanvas{
+    margin: 0 auto;
+    width: 95%;
+    height: 85%;
+    border: 1px white solid;
+    border-radius: 5px;
+    #greenball{
+      position: relative;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background-color: $electricGreen;
+      border-radius: 5px;
+    }
+    #redball{
+      position: relative;
+      top: 10%;
+      left: 10%;
+      width: 5px;
+      height: 5px;
+      background-color: red;
+      border-radius: 5px;
+    }
+  }
+  p{
+    line-height: 1px;
+  }
+}
+
+
+////////////////////////////////////////////////////
+/////////////      Proyecto       //////////////////
+////////////////////////////////////////////////////
+
+header{
+  margin: 0 auto;
+  color: $cyan;
+  h1{
+    text-align: center;
+    font-weight: 900;
+  }
+  h3{
+    text-align: center;
+    font-weight: 700;
+    a{
+      text-decoration: none;
+      padding: 3px;
+      background: darken($darkPurple, 10);
+      color: complement($cyan);
+    }
+  }
+}
+
+/////// Classes
+.wrapperproject{
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  border: 3px solid $lightGreen;
+  padding: 10px;
+  clear: both;
+}
+
+.label{
+  font-weight: 700;
+  color: $white;
+  margin: 2% 0;
+}
+
+.value{
+  font-weight: 400;
+  color: darken($white, 10);
+  margin-left: 2%;
+}
+
+///////// Elements
+#desc{
+  position: relative;
+  height: 70px;
+  color: $white;
+  text-align: center;
+}
+
+#controls{
+  position: relative;
+  margin-top: 5%;
+  float: left;
+  width: 15%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  input{
+    width: 40px;
+    transition: 0.5s;
+    text-align: center;
+    &:focus{
+      width: 80px;
+      transition: 0.5s;
+      text-align: center;
+    }
+  }
+  #throw{
+    margin: 5% 3%;
+    height: 24px;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    background-color: darken($darkPurple, 10);
+    color: $lightGreen;
+    font-weight: 900;
+    cursor: pointer;
+    border-bottom: 3px solid darken($darkPurple, 15);
+    border-left: 3px solid darken($darkPurple, 15);
+    &:active{
+      margin: 5% 3%;
+      height: 24px;
+      width: 100px;
+      text-align: center;
+      padding-top: 12px;
+      padding-left: 9px;
+      background-color: darken($darkPurple, 15);
+      color: complement($lightGreen);
+      font-weight: 900;
+      cursor: pointer;
+      border-bottom: 3px solid darken($darkPurple, 10);
+      border-left: 3px solid darken($darkPurple, 10);
+    }
+  }
+}
+
+#canvas{
+  position: relative;
+  float: right;
+  height: 75%;
+  width: 83%;
+  border-bottom: 2px solid $lightGreen;
+  border-left: 2px solid $lightGreen;
+  #cannon{
+    z-index: 99;
+    position: absolute;
+    bottom: -10px;
+    left: -25px;
+    width: 50px;
+    height: 30px;
+    background-image: url('../res/img/cannon.png');
+    background-repeat: no-repeat;
+  }
+  #projectile{
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: $cyan;
+    position: absolute;
+    bottom: 0px;
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/master.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
+    <title>Curso de programación JS</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Practicas y proyecto del <a href="#">curso de programación en JS</a> | <a href="#">Repositorio</a></h1>
+    </header>
+
+    <div class="container">
+      <div class="title">
+        Practicas
+      </div>
+      <div id="practicas">
+        <!-- Practica del dado -->
+        <div id="dado" class="wrapper">
+          <img id="imagen_dado" src="/res/img/1.png"/>
+          <span>Randomdize</span>
+          <ul id="icons">
+            <li><img src="/res/img/1.png"></li>
+            <li><img src="/res/img/2.png"></li>
+            <li><img src="/res/img/3.png"></li>
+            <li><img src="/res/img/4.png"></li>
+            <li><img src="/res/img/5.png"></li>
+            <li><img src="/res/img/6.png"></li>
+          </ul>
+          <ul id="num-reps">
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+            <li>0</li>
+          </ul>
+        </div>
+        <!-- fin dado -->
+
+        <!-- Practica del reproductor mp3 -->
+        <div id="reproductor" class="wrapper">
+          <div id="player">
+            <div id="screen">
+              <div id="title"> </div>
+              <div id="time">--:--/--:--</div>
+              <div id="progress"></div>
+            </div>
+            <audio> </audio>
+            <button id="prev"><i class="fa fa-fast-backward"></i></button>
+            <button id="play"><i class="fa fa-play"></i></button>
+            <button id="stop"><i class="fa fa-stop"></i></button>
+            <button id="next"><i class="fa fa-fast-forward"></i></button>
+            <div id="songs-list">
+
+            </div>
+          </div>
+        </div>
+        <!-- fin reproductormp3 -->
+
+        <!-- Practica del piano -->
+        <div id="piano" class="wrapper">
+          <div id="piano-container">
+
+          </div>
+        </div>
+        <!-- fin piano -->
+
+        <!-- Practica del minijuego -->
+        <div id="minijuego" class="wrapper">
+          <div id="gamecanvas" tabindex="0">
+            <div id="greenball"></div>
+            <div id="redball"></div>
+          </div>
+          <p>Usa las flechas para mover la bola verde</p>
+          <p>Teclas deshabilitadas</p>
+        </div>
+        <!-- fin minijuego -->
+
+      </div>
+    </div>
+
+    <!-- Seccion del proyecto --------------->
+    <div class="container">
+      <div class="title">
+        Proyecto
+      </div>
+      <div id="proyecto">
+        <header>
+          <h3>Simulador de tiro parabólico</h3>
+        </header>
+
+        <div class="wrapperproject">
+          <div id="desc">
+            Marca un ángulo, introduce la velocidad inicial y lanza!
+            <br>
+            <small>(click para fijar/cambiar angulo)</small>
+          </div>
+          <div id="controls">
+            <span class="label">Ángulo:</span>
+            <span id="angle" class="value">90º</span>
+            <span class="label">Velocidad inicial:</span>
+            <input type="text" name="name" value=""/>
+            <a id="throw">Lanzar</>
+          </div>
+          <div id="canvas">
+            <div id="cannon">
+
+            </div>
+            <div id="projectile">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <!-- JS -->
+  <script src="js/dado.js" charset="utf-8"></script>
+  <script src="js/reproductor.js" charset="utf-8"></script>
+  <script src="js/piano.js" charset="utf-8"></script>
+  <script src="js/minijuego.js" charset="utf-8"></script>
+  <script src="js/proyecto.js" charset="utf-8"></script>
+</html>
