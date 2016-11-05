@@ -1,7 +1,11 @@
 var btn = document.querySelector('#dado span');
 
-var caras_dado = ['/res/img/1.png','/res/img/2.png','/res/img/3.png',
-                  '/res/img/4.png','/res/img/5.png','/res/img/6.png'];
+var caras_dado = ['https://rawgit.com/Franjpr/curso-javascript/master/res/img/1.png',
+                  'https://rawgit.com/Franjpr/curso-javascript/master/res/img/2.png',
+                  'https://rawgit.com/Franjpr/curso-javascript/master/res/img/3.png',
+                  'https://rawgit.com/Franjpr/curso-javascript/master/res/img/4.png',
+                  'https://rawgit.com/Franjpr/curso-javascript/master/res/img/5.png',
+                  'https://rawgit.com/Franjpr/curso-javascript/master/res/img/6.png'];
 
 btn.addEventListener('mouseup', clickHandler);
 

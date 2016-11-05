@@ -1,6 +1,7 @@
 $(document).ready(function(){
   var active_angle = false;
-  var soundsPaths = ['https://rawgit.com/Franjpr/proyecto-cursojs/master/res/audio/laser_shoot.wav','https://rawgit.com/Franjpr/proyecto-cursojs/master/res/audio/hit.wav'];
+  var soundsPaths = ['https://rawgit.com/Franjpr/curso-javascript/master/res/audio/laser_shoot.wav'
+                    ,'https://rawgit.com/Franjpr/curso-javascript/master/res/audio/hit.wav'];
 
   //activa/desactiva la fijacion del angulo
   $("#canvas").on('click', function(){
