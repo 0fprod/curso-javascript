@@ -59,7 +59,7 @@ function throwProjectile(soundsPaths){
     //Update html x,y,t
     $("#px").html('X: ' + x.toFixed(2) + ' px');
     $("#py").html('Y: ' + Math.abs(y.toFixed(2)) + ' px');
-    $("#flytime").html('T: ' + (t/12).toFixed(2) + ' ms');
+    $("#flytime").html('T: ' + (t/12).toFixed(2) + ' s');
 
     if(y.toPrecision(3) <= 1){
       new Audio(soundsPaths[1]).play();
