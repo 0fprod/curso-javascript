@@ -41,7 +41,7 @@ function throwProjectile(soundsPaths){
   var ys = speed * Math.sin(angle); //y speed
   var g = 9.8;                                                 //Gravity acceleration
   var t = 0;
-
+  var maxy = [];
   new Audio(soundsPaths[0]).play();
 
   var tick = window.setInterval(function(){
@@ -49,14 +49,21 @@ function throwProjectile(soundsPaths){
     //t++;
     var x = (xs * t);                           //pos X at time T
     var y = ys * t - 0.5 * g * Math.pow(t, 2) ; //pos y
+    maxy.push(y);
 
     x = (x >= parsePixel($("#canvas").css('width'))) ? parsePixel($("#canvas").css('width')) : x; //Avoid projectile from exceeding #canvas width
 
     $("#projectile").css('bottom', y.toPrecision(3) + 'px');
     $("#projectile").css('left', x.toPrecision(3) + 'px');
 
-    if(y.toPrecision(3) <= 0){
+    //Update html x,y,t
+    $("#px").html('X: ' + x.toFixed(2) + ' px');
+    $("#py").html('Y: ' + Math.abs(y.toFixed(2)) + ' px');
+    $("#flytime").html('T: ' + (t/12).toFixed(2) + ' ms');
+
+    if(y.toPrecision(3) <= 1){
       new Audio(soundsPaths[1]).play();
+      $("#my").html('MaxY: ' + getMax(maxy).toFixed(2) + ' px');
       clearInterval(tick); //stop animation when pos Y reaches 0
     }
   }, 1);
@@ -78,4 +85,8 @@ function toDegs(angle){
 
 function toRads(angle){
   return angle * Math.PI / 180;
+}
+
+function getMax(arr) {
+  return Math.max.apply(null, arr);
 }

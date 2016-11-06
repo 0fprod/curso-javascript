@@ -269,7 +269,7 @@ header{
 .wrapperproject{
   width: 800px;
   height: 500px;
-  margin: 0 auto;
+  margin: 3% auto;
   border: 3px solid $lightGreen;
   padding: 10px;
   clear: both;
@@ -277,13 +277,11 @@ header{
 
 .label{
   font-weight: 700;
-  color: $white;
   margin: 2% 0;
 }
 
 .value{
   font-weight: 400;
-  color: darken($white, 10);
   margin-left: 2%;
 }
 
@@ -339,6 +337,9 @@ header{
       border-bottom: 3px solid darken($darkPurple, 10);
       border-left: 3px solid darken($darkPurple, 10);
     }
+  }
+  span{
+    color: $white;
   }
 }
 
