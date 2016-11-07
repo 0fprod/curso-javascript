@@ -42,7 +42,7 @@ function throwProjectile(soundsPaths){
   var g = 9.8;                                                 //Gravity acceleration
   var t = 0;
   var maxy = [];
-  var start_time = new Date().getSeconds();
+  var start_time = new Date();
   var end_time;
   new Audio(soundsPaths[0]).play();
 
@@ -63,8 +63,9 @@ function throwProjectile(soundsPaths){
 
     if(y.toPrecision(3) <= 1){
       new Audio(soundsPaths[1]).play();
-      end_time = new Date().getSeconds();
-      $("#flytime").html('T: ' + parseInt(end_time - start_time) + ' s (aprox)');
+      end_time = new Date();
+      var flytime = new Date(end_time - start_time);
+      $("#flytime").html('T: ' + flytime.getSeconds() + '.' + flytime.getMilliseconds() + ' s (aprox)');
       $("#my").html('MaxY: ' + getMax(maxy).toFixed(2) + ' px');
       clearInterval(tick); //stop animation when pos Y reaches 0
     }
